@@ -1,0 +1,17 @@
+# <IfModule mod_rewrite.c>
+#   Header set Access-Control-Allow-Origin "*"
+#   Header set Access-Control-Allow-Methods "POST, GET, OPTIONS, DELETE, PUT"
+#   Header set Access-Control-Allow-Headers "Content-Type"
+#   RewriteEngine on
+#   RewriteRule ^$ public/ [L]
+#   RewriteRule (.*) public/$1 [L]
+#   RewriteRule  ^(.+)$ index.php?url=$1 [QSA,L]
+# </IfModule>
+# RewriteEngine on
+# RewriteRule .* /public/$0 [L]
+# DirectoryIndex index.php
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+  RewriteRule .* /public/$0 [L]
+  DirectoryIndex index.php
+</IfModule>
